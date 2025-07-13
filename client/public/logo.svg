@@ -1,61 +1,64 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
   <defs>
     <linearGradient id="brainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4FC3F7;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#29B6F6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0288D1;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E40AF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="circuitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60A5FA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
     </linearGradient>
   </defs>
   
-  <!-- Brain outline similar to the reference -->
-  <g transform="translate(10, 15)">
-    <!-- Left hemisphere -->
-    <path d="M 20 15 
-             C 5 15, 5 25, 8 35
-             C 10 45, 15 50, 20 55
-             C 25 60, 30 62, 35 60
-             C 38 58, 40 55, 40 50
-             C 40 45, 38 40, 35 35
-             C 32 30, 28 25, 25 20
-             C 23 17, 21 15, 20 15 Z" 
+  <!-- Brain design matching the reference -->
+  <g transform="translate(10, 10)">
+    <!-- Main brain structure - simplified geometric style -->
+    <path d="M 40 20 
+             C 30 12, 20 15, 15 25
+             C 12 35, 15 45, 20 50
+             C 25 55, 30 58, 35 60
+             C 40 62, 45 60, 50 55
+             C 60 50, 65 45, 68 35
+             C 70 25, 65 15, 55 12
+             C 50 10, 45 12, 40 20 Z" 
           fill="url(#brainGradient)" 
-          stroke="#0288D1" 
-          stroke-width="1.5"/>
+          stroke="none"/>
     
-    <!-- Right hemisphere -->
-    <path d="M 40 20
-             C 42 18, 45 15, 50 15
-             C 55 15, 60 18, 62 25
-             C 65 30, 68 35, 65 40
-             C 63 45, 60 50, 55 55
-             C 50 60, 45 62, 40 60
-             C 38 58, 40 55, 40 50
-             C 40 45, 42 40, 45 35
-             C 47 30, 45 25, 40 20 Z" 
-          fill="url(#brainGradient)" 
-          stroke="#0288D1" 
-          stroke-width="1.5"/>
-    
-    <!-- Central connection -->
-    <path d="M 35 35 C 40 35, 40 40, 45 35" 
-          stroke="#0288D1" 
-          stroke-width="2" 
-          fill="none"/>
-    
-    <!-- Neural pathways -->
-    <g stroke="#29B6F6" stroke-width="1" fill="none" opacity="0.7">
-      <path d="M 15 25 C 20 28, 25 30, 30 35"/>
-      <path d="M 25 45 C 30 48, 35 50, 40 52"/>
-      <path d="M 45 25 C 50 28, 55 30, 60 35"/>
-      <path d="M 50 45 C 55 48, 58 50, 60 52"/>
+    <!-- Circuit pattern overlay -->
+    <g stroke="url(#circuitGradient)" stroke-width="1.5" fill="none" opacity="0.8">
+      <!-- Horizontal lines -->
+      <path d="M 20 25 L 35 25 M 45 25 L 60 25"/>
+      <path d="M 25 35 L 40 35 M 50 35 L 65 35"/>
+      <path d="M 20 45 L 35 45 M 45 45 L 60 45"/>
+      
+      <!-- Vertical connections -->
+      <path d="M 25 25 L 25 35 M 25 35 L 25 45"/>
+      <path d="M 35 25 L 35 35 M 35 35 L 35 45"/>
+      <path d="M 50 25 L 50 35 M 50 35 L 50 45"/>
+      <path d="M 60 25 L 60 35 M 60 35 L 60 45"/>
+      
+      <!-- Diagonal connections -->
+      <path d="M 35 25 L 45 35"/>
+      <path d="M 45 25 L 35 35"/>
     </g>
     
-    <!-- Circuit-like nodes -->
-    <circle cx="18" cy="30" r="2" fill="#4FC3F7"/>
-    <circle cx="28" cy="38" r="1.5" fill="#29B6F6"/>
-    <circle cx="38" cy="32" r="2" fill="#4FC3F7"/>
-    <circle cx="48" cy="28" r="1.5" fill="#29B6F6"/>
-    <circle cx="58" cy="38" r="2" fill="#4FC3F7"/>
-    <circle cx="45" cy="48" r="1.5" fill="#29B6F6"/>
+    <!-- Circuit nodes -->
+    <g fill="url(#circuitGradient)">
+      <circle cx="25" cy="25" r="2"/>
+      <circle cx="35" cy="25" r="2"/>
+      <circle cx="50" cy="25" r="2"/>
+      <circle cx="60" cy="25" r="2"/>
+      <circle cx="30" cy="35" r="1.5"/>
+      <circle cx="40" cy="35" r="2"/>
+      <circle cx="55" cy="35" r="1.5"/>
+      <circle cx="25" cy="45" r="1.5"/>
+      <circle cx="35" cy="45" r="2"/>
+      <circle cx="50" cy="45" r="1.5"/>
+      <circle cx="60" cy="45" r="2"/>
+    </g>
+    
+    <!-- Central processing unit indicator -->
+    <rect x="37" y="32" width="6" height="6" rx="1" fill="#60A5FA" opacity="0.9"/>
   </g>
 </svg>
