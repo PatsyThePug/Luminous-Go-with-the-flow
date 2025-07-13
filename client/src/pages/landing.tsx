@@ -8,11 +8,9 @@ export default function Landing() {
       {/* Header */}
       <header className="flex items-center justify-center p-6 pt-12">
         <div className="flex items-center space-x-4">
-          <img 
-            src="/logo.svg" 
-            alt="Luminous Logo" 
-            className="w-12 h-12"
-          />
+          <div className="w-12 h-12 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+            <Brain className="w-8 h-8 text-white" />
+          </div>
           <h1 className="text-3xl font-bold text-white tracking-wide">LUMINOUS</h1>
         </div>
       </header>
