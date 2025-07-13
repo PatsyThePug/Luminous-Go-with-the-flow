@@ -3,8 +3,8 @@ import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/layout/header";
 import TodayOverview from "@/components/dashboard/today-overview";
-import CreativeProjects from "@/components/dashboard/creative-projects";
-import WellbeingRituals from "@/components/dashboard/wellbeing-rituals";
+import CreativeProjectsSimple from "@/components/dashboard/creative-projects-simple";
+import WellbeingRitualsSimple from "@/components/dashboard/wellbeing-rituals-simple";
 import CommunityChallenges from "@/components/dashboard/community-challenges";
 import CommunitySection from "@/components/dashboard/community-section";
 import MindMappingCard from "@/components/dashboard/mind-mapping-card";
@@ -53,13 +53,13 @@ export default function Dashboard() {
           {/* Columna izquierda - Today's Overview, Creative Projects, Community Amping */}
           <div className="space-y-6">
             <TodayOverview />
-            <CreativeProjects />
+            <CreativeProjectsSimple />
             <CommunityChallenges />
           </div>
           
           {/* Columna derecha - Wellbeing Rituals, Mind Mapping, Community & Challenges */}
           <div className="space-y-6">
-            <WellbeingRituals />
+            <WellbeingRitualsSimple />
             <MindMappingCard />
             <CommunitySection />
           </div>
