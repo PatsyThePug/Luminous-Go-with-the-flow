@@ -74,8 +74,8 @@ export default function Profile() {
         <div className="mb-8">
           <Card className="glass-effect border-white/10">
             <CardContent className="p-6">
-              <div className="flex items-center space-x-4">
-                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary">
+              <div className="flex items-center space-x-6">
+                <div className="w-24 h-24 rounded-full overflow-hidden border-3 border-primary shadow-lg user-profile-glow">
                   {user?.profileImageUrl ? (
                     <img 
                       src={user.profileImageUrl} 
@@ -83,22 +83,22 @@ export default function Profile() {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <div className="w-full h-full bg-primary/20 flex items-center justify-center">
-                      <User className="w-8 h-8 text-primary" />
+                    <div className="w-full h-full bg-gradient-to-br from-primary/40 to-green-400/40 flex items-center justify-center">
+                      <User className="w-12 h-12 text-white" />
                     </div>
                   )}
                 </div>
                 <div className="flex-1">
-                  <h1 className="text-xl font-semibold text-white">
+                  <h1 className="text-2xl font-bold text-white mb-2">
                     {user?.firstName && user?.lastName 
                       ? `${user.firstName} ${user.lastName}`
-                      : user?.email || 'Welcome!'
+                      : user?.email?.split('@')[0].charAt(0).toUpperCase() + user?.email?.split('@')[0].slice(1) || 'Welcome!'
                     }
                   </h1>
                   {user?.email && (
-                    <p className="text-secondary">{user.email}</p>
+                    <p className="text-secondary text-lg">{user.email}</p>
                   )}
-                  <p className="text-sm text-muted-foreground mt-1">
+                  <p className="text-sm text-muted-foreground mt-2">
                     Member since {user?.createdAt ? new Date(user.createdAt).toLocaleDateString() : 'Recently'}
                   </p>
                 </div>

@@ -165,20 +165,22 @@ export class DatabaseStorage implements IStorage {
 
   // Habit entry operations
   async getHabitEntries(habitId: number, startDate?: Date, endDate?: Date): Promise<HabitEntry[]> {
-    let query = db.select().from(habitEntries).where(eq(habitEntries.habitId, habitId));
+    let whereConditions = [eq(habitEntries.habitId, habitId)];
     
     if (startDate) {
-      query = query.where(gte(habitEntries.completedAt, startDate));
+      whereConditions.push(gte(habitEntries.completedAt, startDate));
     }
     if (endDate) {
-      query = query.where(lte(habitEntries.completedAt, endDate));
+      whereConditions.push(lte(habitEntries.completedAt, endDate));
     }
     
-    return await query.orderBy(desc(habitEntries.completedAt));
+    return await db.select().from(habitEntries)
+      .where(and(...whereConditions))
+      .orderBy(desc(habitEntries.completedAt));
   }
 
   async getUserHabitEntries(userId: string, date?: Date): Promise<HabitEntry[]> {
-    let query = db.select().from(habitEntries).where(eq(habitEntries.userId, userId));
+    let whereConditions = [eq(habitEntries.userId, userId)];
     
     if (date) {
       const startOfDay = new Date(date);
@@ -186,13 +188,15 @@ export class DatabaseStorage implements IStorage {
       const endOfDay = new Date(date);
       endOfDay.setHours(23, 59, 59, 999);
       
-      query = query.where(and(
+      whereConditions.push(
         gte(habitEntries.completedAt, startOfDay),
         lte(habitEntries.completedAt, endOfDay)
-      ));
+      );
     }
     
-    return await query.orderBy(desc(habitEntries.completedAt));
+    return await db.select().from(habitEntries)
+      .where(and(...whereConditions))
+      .orderBy(desc(habitEntries.completedAt));
   }
 
   async createHabitEntry(entry: InsertHabitEntry): Promise<HabitEntry> {

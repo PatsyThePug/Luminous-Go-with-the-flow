@@ -7,9 +7,13 @@ export default function Landing() {
     <div className="min-h-screen luminous-gradient flex flex-col">
       {/* Header */}
       <header className="flex items-center justify-center p-6 pt-12">
-        <div className="flex items-center space-x-3">
-          <Brain className="text-3xl brain-icon" />
-          <h1 className="text-2xl font-semibold text-white">LUMINOUS</h1>
+        <div className="flex items-center space-x-4">
+          <img 
+            src="/logo.svg" 
+            alt="Luminous Logo" 
+            className="w-12 h-12"
+          />
+          <h1 className="text-3xl font-bold text-white tracking-wide">LUMINOUS</h1>
         </div>
       </header>
 

@@ -132,4 +132,27 @@
   .text-secondary {
     color: var(--text-secondary);
   }
+
+  .border-3 {
+    border-width: 3px;
+  }
+
+  .user-profile-glow {
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.3);
+  }
+
+  .logo-animation {
+    animation: logo-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes logo-pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
 }
