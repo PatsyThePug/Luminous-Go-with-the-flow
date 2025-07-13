@@ -87,7 +87,8 @@ export async function setupAuth(app: Express) {
   // Use the current dev domain and production domain
   const domains = [
     process.env.REPLIT_DEV_DOMAIN,
-    'luminous-creative-mindfulness-alejandrabarcen.replit.app',
+    'luminous-go-with-the-flow-alejandrabarcen.replit.app',
+    'luminous-creative-mindfulness-alejandrabarcen.replit.app', // fallback for current domain
     ...process.env.REPLIT_DOMAINS!.split(",")
   ].filter(Boolean);
 

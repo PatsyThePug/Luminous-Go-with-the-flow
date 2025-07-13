@@ -15,7 +15,7 @@ Preferred communication style: Simple, everyday language.
 - ✅ **All 6 Sections Implemented**: Projects, Wellness, Inspiration, Community, Challenges, Meditation
 - ✅ **Mobile Navigation**: Bottom navigation with 7 visible icons (including Home)
 - ✅ **Logo Integration**: Custom Luminous neurodiversity logo with colorful brain design
-- ✅ **Live Deployment**: Available at https://luminous-creative-mindfulness-alejandrabarcen.replit.app/
+- ✅ **Live Deployment**: Available at https://luminous-go-with-the-flow-alejandrabarcen.replit.app/ (updated domain)
 - ✅ **Mobile-First Design**: Optimized for touch interaction and mobile devices
 - ✅ **Replit Auth Integration**: Full authentication system with login/logout
 - ✅ **Protected Dashboard**: User-specific content with session management
