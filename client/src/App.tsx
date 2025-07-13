@@ -25,7 +25,11 @@ function Router() {
   return (
     <div className={`min-h-screen luminous-gradient ${isNative ? 'native-app' : 'web-app'}`}>
       <Switch>
-        {isLoading || !isAuthenticated ? (
+        {isLoading ? (
+          <div className="min-h-screen luminous-gradient flex items-center justify-center">
+            <div className="text-white text-lg">Loading...</div>
+          </div>
+        ) : !isAuthenticated ? (
           <Route path="/" component={Landing} />
         ) : (
           <>
