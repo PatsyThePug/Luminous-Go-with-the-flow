@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Luminous Dark Theme Colors */
+  --background: hsl(237, 32%, 13%);
+  --foreground: hsl(0, 0%, 100%);
+  --muted: hsl(240, 30%, 20%);
+  --muted-foreground: hsl(220, 10%, 70%);
+  --popover: hsl(237, 32%, 13%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --card: hsl(237, 32%, 16%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --border: hsl(240, 30%, 25%);
+  --input: hsl(240, 30%, 25%);
+  --primary: hsl(188, 100%, 41%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(237, 32%, 16%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(237, 32%, 20%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(188, 100%, 41%);
+  --radius: 0.75rem;
+
+  /* Luminous Custom Colors */
+  --primary-dark: hsl(237, 32%, 13%);
+  --secondary-dark: hsl(237, 44%, 15%);
+  --card-dark: hsl(237, 39%, 18%);
+  --accent-blue: hsl(188, 100%, 41%);
+  --accent-orange: hsl(14, 100%, 57%);
+  --accent-yellow: hsl(60, 100%, 59%);
+  --accent-green: hsl(88, 50%, 53%);
+  --text-primary: hsl(0, 0%, 100%);
+  --text-secondary: hsl(220, 13%, 69%);
+}
+
+.dark {
+  /* Keep same values for dark mode */
+  --background: hsl(237, 32%, 13%);
+  --foreground: hsl(0, 0%, 100%);
+  --muted: hsl(240, 30%, 20%);
+  --muted-foreground: hsl(220, 10%, 70%);
+  --popover: hsl(237, 32%, 13%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --card: hsl(237, 32%, 16%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --border: hsl(240, 30%, 25%);
+  --input: hsl(240, 30%, 25%);
+  --primary: hsl(188, 100%, 41%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(237, 32%, 16%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(237, 32%, 20%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(188, 100%, 41%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background: linear-gradient(135deg, hsl(237, 32%, 13%) 0%, hsl(237, 44%, 15%) 50%, hsl(237, 39%, 18%) 100%);
+    min-height: 100vh;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    background: rgba(37, 37, 82, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .progress-bar {
+    background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-green) 100%);
+    transition: width 0.3s ease;
+  }
+  
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 188, 212, 0.15);
+  }
+
+  .brain-icon {
+    background: linear-gradient(45deg, var(--accent-blue), var(--accent-green));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .luminous-gradient {
+    background: linear-gradient(135deg, hsl(237, 32%, 13%) 0%, hsl(237, 44%, 15%) 50%, hsl(237, 39%, 18%) 100%);
+  }
+
+  .accent-orange {
+    color: var(--accent-orange);
+  }
+
+  .bg-accent-orange {
+    background-color: var(--accent-orange);
+  }
+
+  .accent-yellow {
+    color: var(--accent-yellow);
+  }
+
+  .bg-accent-yellow {
+    background-color: var(--accent-yellow);
+  }
+
+  .accent-green {
+    color: var(--accent-green);
+  }
+
+  .bg-accent-green {
+    background-color: var(--accent-green);
+  }
+
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+}
