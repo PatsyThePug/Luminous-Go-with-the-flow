@@ -6,6 +6,7 @@ import TodayOverview from "@/components/dashboard/today-overview";
 import CreativeProjects from "@/components/dashboard/creative-projects";
 import WellbeingRituals from "@/components/dashboard/wellbeing-rituals";
 import CommunityChallenges from "@/components/dashboard/community-challenges";
+import CommunitySection from "@/components/dashboard/community-section";
 import MindMappingCard from "@/components/dashboard/mind-mapping-card";
 
 export default function Dashboard() {
@@ -43,22 +44,26 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen pb-20">
+    <div className="min-h-screen pb-20 luminous-gradient">
       <Header />
       
-      <main className="px-4 pb-8 space-y-6">
-        <TodayOverview />
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <CreativeProjects />
-          
-          <div className="space-y-6">
-            <WellbeingRituals />
+      <main className="px-4 pb-8 space-y-4">
+        {/* Layout en grid como en la imagen de referencia */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          {/* Columna izquierda */}
+          <div className="space-y-4">
+            <TodayOverview />
+            <CreativeProjects />
             <CommunityChallenges />
           </div>
+          
+          {/* Columna derecha */}
+          <div className="space-y-4">
+            <WellbeingRituals />
+            <MindMappingCard />
+            <CommunitySection />
+          </div>
         </div>
-
-        <MindMappingCard />
       </main>
     </div>
   );

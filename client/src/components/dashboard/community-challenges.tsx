@@ -1,43 +1,19 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Users, Trophy } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Star } from "lucide-react";
 
 export default function CommunityChallenges() {
-  const activities = [
-    {
-      icon: Users,
-      title: "Join discussions",
-      bgColor: "bg-green-500/20",
-      iconColor: "text-green-400",
-    },
-    {
-      icon: Trophy,
-      title: "Weekly Challenge",
-      bgColor: "bg-green-500/20",
-      iconColor: "text-green-400",
-    },
-  ];
-
   return (
     <Card className="glass-effect border-white/10 card-hover">
-      <CardHeader>
-        <CardTitle className="text-sm font-medium text-secondary uppercase tracking-wide">
-          COMMUNITY & CHALLENGES
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="space-y-3">
-          {activities.map((activity, index) => (
-            <Button
-              key={index}
-              className="w-full flex items-center space-x-3 p-3 bg-secondary hover:bg-accent rounded-xl transition-colors justify-start h-auto"
-            >
-              <div className={`w-8 h-8 ${activity.bgColor} rounded-lg flex items-center justify-center`}>
-                <activity.icon className={`w-4 h-4 ${activity.iconColor}`} />
-              </div>
-              <span className="font-medium text-white">{activity.title}</span>
-            </Button>
-          ))}
+      <CardContent className="p-6">
+        <div className="flex items-center space-x-4">
+          <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center flex-shrink-0">
+            <Star className="text-white w-6 h-6" />
+          </div>
+          <div className="flex-1">
+            <h3 className="font-semibold text-lg text-white leading-tight">
+              Community amping to generate new ideas
+            </h3>
+          </div>
         </div>
       </CardContent>
     </Card>
