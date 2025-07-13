@@ -47,18 +47,18 @@ export default function Dashboard() {
     <div className="min-h-screen pb-20 luminous-gradient">
       <Header />
       
-      <main className="px-4 pb-8 space-y-4">
-        {/* Layout en grid como en la imagen de referencia */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {/* Columna izquierda */}
-          <div className="space-y-4">
+      <main className="px-4 pb-8 max-w-7xl mx-auto">
+        {/* Layout exacto de la imagen de referencia - 2 columnas */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Columna izquierda - Today's Overview, Creative Projects, Community Amping */}
+          <div className="space-y-6">
             <TodayOverview />
             <CreativeProjects />
             <CommunityChallenges />
           </div>
           
-          {/* Columna derecha */}
-          <div className="space-y-4">
+          {/* Columna derecha - Wellbeing Rituals, Mind Mapping, Community & Challenges */}
+          <div className="space-y-6">
             <WellbeingRituals />
             <MindMappingCard />
             <CommunitySection />

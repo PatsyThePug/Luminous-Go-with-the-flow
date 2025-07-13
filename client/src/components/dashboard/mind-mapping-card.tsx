@@ -1,17 +1,17 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Star } from "lucide-react";
+import { Lightbulb } from "lucide-react";
 
 export default function MindMappingCard() {
   return (
-    <Card className="glass-effect border-white/10 card-hover">
+    <Card className="glass-effect border-white/10 card-hover bg-gradient-to-br from-indigo-600/50 to-indigo-800/50">
       <CardContent className="p-6">
         <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center">
-            <Star className="text-white text-xl w-6 h-6" />
+          <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center">
+            <Lightbulb className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h3 className="font-semibold text-lg text-white">Try mind mapping to generate new ideas</h3>
-            <p className="text-secondary text-sm">Connect with creative minds and share inspiration</p>
+            <h3 className="text-lg font-medium text-white">Try mind mapping</h3>
+            <p className="text-white/70">to generate new ideas</p>
           </div>
         </div>
       </CardContent>

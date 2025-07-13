@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { setupAuth, isAuthenticated } from "./replitAuth";
+import { getWellnessData, getDailyQuote, getMindfulnessQuote, getRecommendedSessions, getBreathingExercise } from "./wellness-apis";
 import { insertProjectSchema, insertTaskSchema, insertHabitSchema, insertHabitEntrySchema, insertCommunityPostSchema, insertChallengeParticipationSchema } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -233,6 +234,57 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Error joining challenge:", error);
       res.status(500).json({ message: "Failed to join challenge" });
+    }
+  });
+
+  // Wellness API endpoints
+  app.get("/api/wellness/daily", async (req, res) => {
+    try {
+      const wellnessData = await getWellnessData();
+      res.json(wellnessData);
+    } catch (error) {
+      console.error("Error fetching wellness data:", error);
+      res.status(500).json({ message: "Failed to fetch wellness data" });
+    }
+  });
+
+  app.get("/api/wellness/quote", async (req, res) => {
+    try {
+      const quote = await getDailyQuote();
+      res.json(quote);
+    } catch (error) {
+      console.error("Error fetching daily quote:", error);
+      res.status(500).json({ message: "Failed to fetch quote" });
+    }
+  });
+
+  app.get("/api/wellness/mindfulness-quote", async (req, res) => {
+    try {
+      const quote = await getMindfulnessQuote();
+      res.json(quote);
+    } catch (error) {
+      console.error("Error fetching mindfulness quote:", error);
+      res.status(500).json({ message: "Failed to fetch mindfulness quote" });
+    }
+  });
+
+  app.get("/api/wellness/sessions", async (req, res) => {
+    try {
+      const sessions = await getRecommendedSessions();
+      res.json(sessions);
+    } catch (error) {
+      console.error("Error fetching meditation sessions:", error);
+      res.status(500).json({ message: "Failed to fetch meditation sessions" });
+    }
+  });
+
+  app.get("/api/wellness/breathing", async (req, res) => {
+    try {
+      const exercise = await getBreathingExercise();
+      res.json(exercise);
+    } catch (error) {
+      console.error("Error fetching breathing exercise:", error);
+      res.status(500).json({ message: "Failed to fetch breathing exercise" });
     }
   });
 
