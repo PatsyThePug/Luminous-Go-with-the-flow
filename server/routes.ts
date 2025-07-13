@@ -21,6 +21,65 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Admin routes - User management
+  app.get('/api/admin/users', isAuthenticated, async (req: any, res) => {
+    try {
+      const currentUserId = req.user.claims.sub;
+      const currentUser = await storage.getUser(currentUserId);
+      
+      // Simple admin check - first user is admin or specific email
+      const isAdmin = currentUser?.email === 'alejandrabarcena2022@gmail.com' || 
+                     currentUser?.id === '40449144';
+      
+      if (!isAdmin) {
+        return res.status(403).json({ message: "Access denied" });
+      }
+      
+      const users = await storage.getAllUsers();
+      res.json(users);
+    } catch (error) {
+      console.error("Error fetching users:", error);
+      res.status(500).json({ message: "Failed to fetch users" });
+    }
+  });
+
+  app.get('/api/admin/users/:userId/profile', isAuthenticated, async (req: any, res) => {
+    try {
+      const currentUserId = req.user.claims.sub;
+      const currentUser = await storage.getUser(currentUserId);
+      
+      const isAdmin = currentUser?.email === 'alejandrabarcena2022@gmail.com' || 
+                     currentUser?.id === '40449144';
+      
+      if (!isAdmin) {
+        return res.status(403).json({ message: "Access denied" });
+      }
+      
+      const userId = req.params.userId;
+      const user = await storage.getUser(userId);
+      const projects = await storage.getUserProjects(userId);
+      const habits = await storage.getUserHabits(userId);
+      const posts = await storage.getUserCommunityPosts(userId);
+      
+      res.json({
+        user,
+        stats: {
+          projects: projects.length,
+          habits: habits.length,
+          posts: posts.length
+        },
+        recentActivity: {
+          projects: projects.slice(0, 5),
+          habits: habits.slice(0, 5),
+          posts: posts.slice(0, 5)
+        }
+      });
+    } catch (error) {
+      console.error("Error fetching user profile:", error);
+      res.status(500).json({ message: "Failed to fetch user profile" });
+    }
+  });
+
   // Project routes
   app.get('/api/projects', isAuthenticated, async (req: any, res) => {
     try {

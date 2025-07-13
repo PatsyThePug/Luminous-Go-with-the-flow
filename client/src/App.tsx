@@ -16,6 +16,7 @@ import Inspiration from "@/pages/inspiration";
 import Community from "@/pages/community";
 import Challenges from "@/pages/challenges";
 import Meditation from "@/pages/meditation";
+import Admin from "@/pages/admin";
 
 function Router() {
   const { isNative, platform } = useCapacitor();
@@ -35,6 +36,7 @@ function Router() {
             <Route path="/community" component={Community} />
             <Route path="/challenges" component={Challenges} />
             <Route path="/meditation" component={Meditation} />
+            <Route path="/admin" component={Admin} />
           </>
         )}
         <Route component={NotFound} />

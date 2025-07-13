@@ -1,7 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { LogOut } from "lucide-react";
+import { LogOut, Settings } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 import luminousLogo from "@assets/1_1752378827956.png";
 import { removeBackground } from "@/utils/imageProcessor";
 import { useAuth } from "@/hooks/useAuth";
@@ -43,6 +44,19 @@ export default function HeaderSimple() {
             {user?.firstName?.[0] || user?.email?.[0]?.toUpperCase() || 'U'}
           </AvatarFallback>
         </Avatar>
+        {/* Admin access for authorized users */}
+        {(user?.email === 'alejandrabarcena2022@gmail.com' || user?.id === '40449144') && (
+          <Link href="/admin">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-white/80 hover:text-white hover:bg-white/10"
+            >
+              <Settings className="w-4 h-4" />
+            </Button>
+          </Link>
+        )}
+        
         <Button
           onClick={() => window.location.href = '/api/logout'}
           variant="ghost"
