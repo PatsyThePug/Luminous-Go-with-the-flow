@@ -1,0 +1,47 @@
+Luminous es una plataforma digital diseñada para inspirar a los usuarios a través de la organización de sus proyectos creativos, rituales de bienestar y momentos de reflexión diaria. Los valores esenciales son:
+
+Creatividad:
+Fomentar la autoexpresión y la organización de ideas mediante herramientas que permitan dar forma a proyectos personales y profesionales.
+Bienestar Integral:
+Integrar prácticas diarias de autocuidado (meditación, ejercicio, rituales) que promuevan la salud mental y física.
+Inspiración Diaria:
+Proveer contenido motivador, ya sea a través de citas, prácticas o ideas creativas que impulsen a los usuarios a comenzar cada día con energía.
+Conexión y Comunidad:
+Crear un espacio de interacción donde los usuarios puedan compartir sus logros y desafíos, fomentando un sentido de pertenencia y apoyo mutuo.
+Equilibrio:
+Ayudar a los usuarios a balancear sus proyectos creativos con su vida personal, promoviendo tanto la productividad como el bienestar.
+
+
+2. Tipografía Seleccionada
+
+La tipografía debe ser moderna, vibrante y clara. Se recomienda el uso de fuentes Sans Serif que combinen frescura y accesibilidad:
+
+Poppins:
+Estilo geométrico y limpio que transmite modernidad y versatilidad, ideal para proyectos creativos y digitales.
+Futura:
+Elegante y con formas geométricas, perfecta para una app con un enfoque moderno y sofisticado.
+Raleway:
+Ligera pero firme, transmite elegancia y modernidad, funcionando bien para interfaces limpias y estilizadas.
+
+
+3. Colores a Utilizar y Motivos
+
+La paleta de colores para Luminous debe ser vibrante, energética y equilibrada:
+
+Amarillo Brillante (#FFEB3B):
+Evoca energía, optimismo y creatividad. Ideal para inspirar y motivar, usándolo en detalles clave (botones, acciones).
+Naranja Vibrante (#FF5722):
+Transmite pasión, creatividad y dinamismo. Perfecto para destacar contenidos o actividades importantes dentro de la app.
+Azul Claro (#00BCD4):
+Aporta calma y claridad mental, equilibrando la energía de los otros colores. Genera sensaciones de confianza y serenidad.
+Verde Pastel (#8BC34A):
+Simboliza crecimiento, armonía y bienestar. Ideal para la sección de bienestar y autocuidado.
+Blanco/Gris Claro (#F5F5F5):
+Se utiliza para mantener un diseño limpio y accesible, permitiendo que los colores vibrantes resalten.
+Paleta Final:
+
+Amarillo Brillante: #FFEB3B (Creatividad y Energía)
+Naranja Vibrante: #FF5722 (Pasión y Creatividad)
+Azul Claro: #00BCD4 (Calma y Claridad)
+Verde Pastel: #8BC34A (Bienestar y Crecimiento)
+Blanco/Gris Claro: #F5F5F5 (Equilibrio y Neutralidad)
