@@ -84,8 +84,14 @@ export async function setupAuth(app: Express) {
     verified(null, user);
   };
 
-  for (const domain of process.env
-    .REPLIT_DOMAINS!.split(",")) {
+  // Use the current dev domain and production domain
+  const domains = [
+    process.env.REPLIT_DEV_DOMAIN,
+    'luminous-creative-mindfulness-alejandrabarcen.replit.app',
+    ...process.env.REPLIT_DOMAINS!.split(",")
+  ].filter(Boolean);
+
+  for (const domain of domains) {
     const strategy = new Strategy(
       {
         name: `replitauth:${domain}`,
