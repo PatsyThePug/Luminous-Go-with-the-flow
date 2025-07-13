@@ -1,15 +1,23 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useState, useEffect } from "react";
 import luminousLogo from "@assets/1_1752378827956.png";
+import { removeBackground } from "@/utils/imageProcessor";
 
 export default function HeaderSimple() {
+  const [transparentLogo, setTransparentLogo] = useState<string>(luminousLogo);
+
+  useEffect(() => {
+    removeBackground(luminousLogo).then(setTransparentLogo);
+  }, []);
+
   return (
     <header className="flex items-center justify-between p-6 max-w-7xl mx-auto">
       {/* Logo y título */}
       <div className="flex items-center space-x-3">
         <img 
-          src={luminousLogo} 
+          src={transparentLogo} 
           alt="Luminous Neurodiversity Logo" 
-          className="w-12 h-12 object-contain"
+          className="w-12 h-12 object-contain drop-shadow-lg"
         />
         <div className="flex flex-col">
           <span className="text-xl font-bold text-white tracking-wide">LUMINOUS</span>
