@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Luminous</string>
+    <string name="title_activity_main">Luminous</string>
+    <string name="package_name">com.luminous.app</string>
+    <string name="custom_url_scheme">com.luminous.app</string>
+</resources>

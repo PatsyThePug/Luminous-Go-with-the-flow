@@ -2,6 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Capacitor Native App Styles */
+.native-app {
+  /* Safe area handling for notched devices */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* iOS specific styles */
+.native-app.ios {
+  /* Disable text selection for native feel */
+  -webkit-user-select: none;
+  user-select: none;
+  /* Disable callouts */
+  -webkit-touch-callout: none;
+  /* Disable tap highlight */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Android specific styles */
+.native-app.android {
+  /* Status bar color handling */
+  background-color: #1e1b4b;
+}
+
+/* Touch optimizations for mobile */
+@media (pointer: coarse) {
+  button, .button, [role="button"] {
+    min-height: 44px; /* Apple's recommended touch target size */
+    min-width: 44px;
+  }
+  
+  /* Larger tap targets for mobile */
+  .tap-target {
+    padding: 12px;
+    margin: 4px;
+  }
+}
+
+/* Prevent zoom on inputs (iOS) */
+input, select, textarea {
+  font-size: 16px !important;
+}
+
+/* Smooth scrolling for native feel */
+.native-app {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
 :root {
   /* Luminous Dark Theme Colors */
   --background: hsl(237, 32%, 13%);

@@ -32,8 +32,15 @@ Preferred communication style: Simple, everyday language.
 
 ## Key Components
 
+### Mobile App Development (NEW)
+- **Platform**: Capacitor 7.x with React integration
+- **iOS/Android**: Native apps sharing 95% of React codebase
+- **Native Features**: Status bar, splash screen, keyboard handling, safe areas
+- **Development**: Xcode/Android Studio integration with live reload
+- **Distribution**: Ready for App Store and Google Play deployment
+
 ### Authentication System
-- **Provider**: Replit Auth with OIDC
+- **Provider**: Replit Auth with OIDC (simplified for mobile demo)
 - **Session Storage**: PostgreSQL-backed sessions using connect-pg-simple
 - **User Management**: Automatic user creation and profile management
 - **Security**: HTTP-only cookies with secure session handling

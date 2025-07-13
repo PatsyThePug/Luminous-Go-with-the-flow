@@ -1,21 +1,23 @@
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Home, Paintbrush, Heart, Users, User } from "lucide-react";
+import { Home, Palette, Heart, Sparkles, Users, Trophy, Brain } from "lucide-react";
 
 export default function BottomNavigation() {
   const [location, setLocation] = useLocation();
 
   const navItems = [
-    { path: "/", icon: Home, label: "Home" },
-    { path: "/projects", icon: Paintbrush, label: "Projects" },
-    { path: "/wellness", icon: Heart, label: "Wellness" },
-    { path: "/community", icon: Users, label: "Community" },
-    { path: "/profile", icon: User, label: "Profile" },
+    { path: "/", icon: Home, label: "Inicio" },
+    { path: "/projects", icon: Palette, label: "Proyectos" },
+    { path: "/wellness", icon: Heart, label: "Bienestar" },
+    { path: "/inspiration", icon: Sparkles, label: "Inspiración" },
+    { path: "/community", icon: Users, label: "Comunidad" },
+    { path: "/challenges", icon: Trophy, label: "Desafíos" },
+    { path: "/meditation", icon: Brain, label: "Meditación" },
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-secondary/95 backdrop-blur-lg border-t border-white/10 px-4 py-3">
-      <div className="flex justify-around max-w-md mx-auto">
+    <nav className="fixed bottom-0 left-0 right-0 bg-gray-900/95 backdrop-blur-lg border-t border-gray-700 z-50">
+      <div className="grid grid-cols-7 gap-1 px-1 py-2 max-w-screen-xl mx-auto">
         {navItems.map(({ path, icon: Icon, label }) => {
           const isActive = location === path;
           
@@ -24,14 +26,14 @@ export default function BottomNavigation() {
               key={path}
               onClick={() => setLocation(path)}
               variant="ghost"
-              className={`flex flex-col items-center space-y-1 p-2 h-auto ${
+              className={`flex flex-col items-center gap-1 p-1 h-auto text-[10px] ${
                 isActive 
-                  ? 'text-primary' 
-                  : 'text-secondary hover:text-white'
+                  ? 'text-cyan-400 bg-cyan-500/10' 
+                  : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
               }`}
             >
-              <Icon className="w-5 h-5" />
-              <span className="text-xs font-medium">{label}</span>
+              <Icon className="w-4 h-4" />
+              <span className="font-medium leading-tight text-center">{label}</span>
             </Button>
           );
         })}
