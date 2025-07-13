@@ -6,7 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useAuth } from "@/hooks/useAuth";
 import NotFound from "@/pages/not-found";
 import Landing from "@/pages/landing";
-import Dashboard from "@/pages/dashboard";
+import DashboardSimple from "@/pages/dashboard-simple";
 import Projects from "@/pages/projects";
 import Wellness from "@/pages/wellness";
 import Community from "@/pages/community";
@@ -30,20 +30,15 @@ function Router() {
   return (
     <div className="min-h-screen luminous-gradient">
       <Switch>
-        {!isAuthenticated ? (
-          <Route path="/" component={Landing} />
-        ) : (
-          <>
-            <Route path="/" component={Dashboard} />
-            <Route path="/projects" component={Projects} />
-            <Route path="/wellness" component={Wellness} />
-            <Route path="/community" component={Community} />
-            <Route path="/profile" component={Profile} />
-          </>
-        )}
+        <Route path="/" component={DashboardSimple} />
+        <Route path="/landing" component={Landing} />
+        <Route path="/projects" component={Projects} />
+        <Route path="/wellness" component={Wellness} />
+        <Route path="/community" component={Community} />
+        <Route path="/profile" component={Profile} />
         <Route component={NotFound} />
       </Switch>
-      {isAuthenticated && <BottomNavigation />}
+      <BottomNavigation />
     </div>
   );
 }
