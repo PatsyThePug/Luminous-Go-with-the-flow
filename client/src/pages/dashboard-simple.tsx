@@ -1,4 +1,4 @@
-import Header from "@/components/layout/header";
+import HeaderSimple from "@/components/layout/header-simple";
 import TodayOverviewSimple from "@/components/dashboard/today-overview-simple";
 import CreativeProjectsSimple from "@/components/dashboard/creative-projects-simple";
 import WellbeingRitualsSimple from "@/components/dashboard/wellbeing-rituals-simple";
@@ -9,7 +9,7 @@ import MindMappingCard from "@/components/dashboard/mind-mapping-card";
 export default function DashboardSimple() {
   return (
     <div className="min-h-screen pb-20 luminous-gradient">
-      <Header />
+      <HeaderSimple />
       
       <main className="px-4 pb-8 max-w-7xl mx-auto">
         {/* Layout exacto de la imagen de referencia - 2 columnas */}
